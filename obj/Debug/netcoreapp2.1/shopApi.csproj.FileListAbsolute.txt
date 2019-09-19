@@ -1,0 +1,14 @@
+C:\Users\Sayko\Source\shopApi\obj\Debug\netcoreapp2.1\shopApi.csprojAssemblyReference.cache
+C:\Users\Sayko\Source\shopApi\obj\Debug\netcoreapp2.1\shopApi.csproj.CoreCompileInputs.cache
+C:\Users\Sayko\Source\shopApi\obj\Debug\netcoreapp2.1\shopApi.RazorAssemblyInfo.cache
+C:\Users\Sayko\Source\shopApi\obj\Debug\netcoreapp2.1\shopApi.RazorAssemblyInfo.cs
+C:\Users\Sayko\Source\shopApi\obj\Debug\netcoreapp2.1\shopApi.AssemblyInfoInputs.cache
+C:\Users\Sayko\Source\shopApi\obj\Debug\netcoreapp2.1\shopApi.AssemblyInfo.cs
+C:\Users\Sayko\Source\shopApi\bin\Debug\netcoreapp2.1\shopApi.deps.json
+C:\Users\Sayko\Source\shopApi\bin\Debug\netcoreapp2.1\shopApi.runtimeconfig.json
+C:\Users\Sayko\Source\shopApi\bin\Debug\netcoreapp2.1\shopApi.runtimeconfig.dev.json
+C:\Users\Sayko\Source\shopApi\bin\Debug\netcoreapp2.1\shopApi.dll
+C:\Users\Sayko\Source\shopApi\bin\Debug\netcoreapp2.1\shopApi.pdb
+C:\Users\Sayko\Source\shopApi\obj\Debug\netcoreapp2.1\shopApi.RazorTargetAssemblyInfo.cache
+C:\Users\Sayko\Source\shopApi\obj\Debug\netcoreapp2.1\shopApi.dll
+C:\Users\Sayko\Source\shopApi\obj\Debug\netcoreapp2.1\shopApi.pdb
