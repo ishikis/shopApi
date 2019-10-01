@@ -88,6 +88,19 @@ namespace shopApi
 
             app.UseHttpsRedirection();
             app.UseAuthentication();
+            //Cors izinleri api  ile  view arasında erişim ayarları yapılıyor
+            app.UseCors(bldr => bldr
+                //.AllowAnyOrigin()
+                .WithOrigins(
+                    "http://localhost:4200",
+                    "http://localhost:4200/checkout",
+                    "https://localhost:4201"
+                    )
+                // .WithMethods("GET", "POST")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowAnyOrigin()
+            );
             app.UseMvc();
         }
     }

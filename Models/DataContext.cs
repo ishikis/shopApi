@@ -10,5 +10,6 @@ namespace shopApi.Models
         }
         public DbSet<category> categories { get; set; }
         public DbSet<product> products { get; set; }
+        public DbSet<order> orders { get; set; }
     }
 }

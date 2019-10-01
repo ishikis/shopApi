@@ -6,22 +6,34 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 
 namespace shopApi.Controllers
 {
-    [Route("token")]
-    [AllowAnonymous()]
-    public class TokenController : Controller
-    {
-        [HttpPost("getnewaccesstoken")]
-        public IActionResult GetToken([FromBody]UserInfo user)
-        {
-            Console.WriteLine("User name:{0}", user.Username);
-            Console.WriteLine("Password:{0}", user.Password);
-            if (IsValidUserAndPassword(user.Username, user.Password))
-                return new ObjectResult(GenerateToken(user.Username));
 
-            return Unauthorized();
+    class tokenClass
+    {
+        public bool success { get; set; }
+        public string token { get; set; }
+    }
+
+    [Route("api/[controller]")]
+    [AllowAnonymous()]
+    public class TokenController : ControllerBase
+    {
+
+        public IActionResult Get([FromBody]UserInfo user)
+        {
+            Console.WriteLine("User name:{0}", user.username);
+            Console.WriteLine("Password:{0}", user.password);
+            if (IsValidUserAndPassword(user.username, user.password))
+            {
+                string token = GenerateToken(user.username);
+
+                return new ObjectResult(new tokenClass() { success = true, token = token });
+            }
+            return Unauthorized();//new ObjectResult(new tokenClass() { success = false, token = "" });
+
         }
 
         private string GenerateToken(string userName)
@@ -46,16 +58,16 @@ namespace shopApi.Controllers
 
         private bool IsValidUserAndPassword(string userName, string password)
         {
-            //Demo için sürekli True döndürdük.
-            //Internal bir NoSQL çözüm üzerinde, username ve passwordleri tutabiliriz.
-            //Client, validation kontrolünden sonra, token almaya hak kazanmalı.
-            return true;
+            if (userName == "admin" && password == "admin")
+                return true;
+            else
+                return false;
         }
     }
 
     public class UserInfo
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
     }
 }
